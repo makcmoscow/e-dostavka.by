@@ -1,31 +1,14 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 import time
-import os
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
-import sys
-from selenium.common.exceptions import TimeoutException
-
-from multiprocessing import Queue, Process
-import openpyxl
-import xlsxwriter
 from selenium.common.exceptions import NoSuchElementException as NoElement
-from selenium.common.exceptions import NoSuchWindowException as NoWindow
-from selenium.common.exceptions import WebDriverException as Chrome_not_reachable
 
-path = 'D:\python\e-dostavka.by\\'
 
-urls = ['https://e-dostavka.by/catalog/400000203.html',\
-            'https://e-dostavka.by/catalog/400000173.html',\
-            'https://e-dostavka.by/catalog/400000177.html',\
-            'https://e-dostavka.by/catalog/400000172.html',\
-            'https://e-dostavka.by/catalog/400000175.html',\
-            'https://e-dostavka.by/catalog/400000170.html',\
-            'https://e-dostavka.by/catalog/400000176.html',\
-            'https://e-dostavka.by/catalog/400000169.html',\
-            'https://e-dostavka.by/catalog/400000179.html']
+urls = ['https://e-dostavka.by/catalog/400000203.html', 'https://e-dostavka.by/catalog/400000173.html',
+        'https://e-dostavka.by/catalog/400000177.html', 'https://e-dostavka.by/catalog/400000172.html',
+        'https://e-dostavka.by/catalog/400000175.html', 'https://e-dostavka.by/catalog/400000170.html',
+        'https://e-dostavka.by/catalog/400000176.html', 'https://e-dostavka.by/catalog/400000169.html',
+        'https://e-dostavka.by/catalog/400000179.html']
 
 
 class Parser:
