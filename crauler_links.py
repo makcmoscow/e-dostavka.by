@@ -8,13 +8,15 @@ urls = ['https://e-dostavka.by/catalog/400000203.html', 'https://e-dostavka.by/c
         'https://e-dostavka.by/catalog/400000177.html', 'https://e-dostavka.by/catalog/400000172.html',
         'https://e-dostavka.by/catalog/400000175.html', 'https://e-dostavka.by/catalog/400000170.html',
         'https://e-dostavka.by/catalog/400000176.html', 'https://e-dostavka.by/catalog/400000169.html',
-        'https://e-dostavka.by/catalog/400000179.html']
+        'https://e-dostavka.by/catalog/400000179.html', 'https://e-dostavka.by/catalog/400000178.html',
+'https://e-dostavka.by/catalog/400000174.html',
+'https://e-dostavka.by/catalog/400000205.html'
+]
 
 
 class Parser:
     def __init__(self):
         self.driver = webdriver.Chrome()
-        # self.category_url = url
         self.product_links = []
         self.current_page = 0
 

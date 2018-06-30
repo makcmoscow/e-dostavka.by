@@ -1,6 +1,6 @@
 import openpyxl
 
-path = 'D:\crawler_freelance.ru\e-dostavka.by\\'
+path = 'D:\python\e-dostavka.by\\'
 excel_filename = 'products.xlsx'
 excel_counter = 2
 workbook = openpyxl.load_workbook(path + excel_filename)
