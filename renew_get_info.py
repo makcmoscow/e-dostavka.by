@@ -20,7 +20,7 @@ class Parser:
             # print('цена self.price до: ', self.price)
             self.price = self.driver.find('div',
                                           class_='product_card__inner').find(
-                'div', class_='price').text.split('\n')[0]
+                'div', class_='price').text.split('\n')[0].split(' ')[0]
             # print('цена self.price после: ', self.price)
             # print('цена self.old_price до: ', self.old_price)
 
@@ -35,7 +35,7 @@ class Parser:
 
         while cell:
             self.text = requests.get(cell).text
-            # self.text = requests.get('https://e-dostavka.by/catalog/item_155746.html').text
+            # self.text = requests.get('https://e-dostavka.by/catalog/item_664134.html').text
             self.driver = BeautifulSoup(self.text, 'lxml')
             if len(self.driver.find_all(class_='content')) == 1:
                 self.is_remove = True
@@ -43,14 +43,15 @@ class Parser:
             self.price = 'None'
             self.old_price = ''
             self.get_price()
-            cell = self.worksheet.cell(row=self.excel_counter, column=21).value
+
             self.worksheet['O' + str(self.excel_counter)] = self.price
             self.worksheet['P' + str(self.excel_counter)] = self.old_price
             self.worksheet['V' + str(self.excel_counter)] = str(datetime.datetime.now().strftime("%d-%m-%Y"))
             print(self.excel_counter)
             self.excel_counter += 1
-            if self.excel_counter%100 == 0:
-                parser.workbook.save(path + parser.excel_filename)
+            cell = self.worksheet.cell(row=self.excel_counter, column=21).value
+            # if self.excel_counter%100 == 0:
+            #     parser.workbook.save(path + parser.excel_filename)
         parser.workbook.save(path + parser.excel_filename)
         print('renew finished')
 
