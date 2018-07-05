@@ -35,6 +35,7 @@ class Parser:
 
         while cell:
             self.text = requests.get(cell).text
+            # self.text = requests.get('https://e-dostavka.by/catalog/item_155746.html').text
             self.driver = BeautifulSoup(self.text, 'lxml')
             if len(self.driver.find_all(class_='content')) == 1:
                 self.is_remove = True
@@ -48,6 +49,8 @@ class Parser:
             self.worksheet['V' + str(self.excel_counter)] = str(datetime.datetime.now().strftime("%d-%m-%Y"))
             print(self.excel_counter)
             self.excel_counter += 1
+            if self.excel_counter%100 == 0:
+                parser.workbook.save(path + parser.excel_filename)
         parser.workbook.save(path + parser.excel_filename)
         print('renew finished')
 

@@ -15,8 +15,8 @@ import xlsxwriter
 from selenium.common.exceptions import NoSuchElementException as NoElement
 from selenium.common.exceptions import NoSuchWindowException as NoWindow
 from selenium.common.exceptions import WebDriverException as Chrome_not_reachable
-# url = 'https://e-dostavka.by/catalog/item_766362.html'
-path = 'D:\python\e-dostavka.by\\'
+# url = 'https://www.okeydostavka.ru/msk/bakaleia-i-konservatsiia-15063-20/konservatsiia-16059-20/molochnye-konservy-16066-20/moloko-tsel-noe-sgushchennoe-rogachevie-s-sakharom-8-5-380g-565197-parent-20'
+path = 'D:\python\Okey\\'
 
 
 class Parser:

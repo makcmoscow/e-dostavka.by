@@ -1,1 +1,0 @@
-python renew_get_info.py
