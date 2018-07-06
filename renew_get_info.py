@@ -35,7 +35,7 @@ class Parser:
 
         while cell:
             self.text = requests.get(cell).text
-            # self.text = requests.get('https://e-dostavka.by/catalog/item_664134.html').text
+            # self.text = requests.get('https://e-dostavka.by/catalog/item_699898.html').text
             self.driver = BeautifulSoup(self.text, 'lxml')
             if len(self.driver.find_all(class_='content')) == 1:
                 self.is_remove = True
