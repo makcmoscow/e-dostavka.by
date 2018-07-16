@@ -6,7 +6,7 @@ import datetime
 import os
 from shutil import copyfile
 
-path = 'D:\python\e-dostavka.by\\'
+path = '/home/makc/python-scripts/e-dostavka.by/'
 
 class Parser:
     def __init__(self):
